@@ -1,0 +1,17 @@
+repos:
+-   repo: https://github.com/golangci/golangci-lint
+    rev: v1.55.2
+    hooks:
+    -   id: golangci-lint-full
+-   repo: local
+    hooks:
+    -   id: gofumpt
+        name: "gofumpt"
+        entry: '/bin/sh -c "go run mvdan.cc/gofumpt@latest -w ."'
+        language: script
+-   repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+    -   id: codespell
+        args: [-w]
+

@@ -243,14 +243,8 @@ clean_certs:
 ###############################################################################
 
 #? lint: Lint, format and fix typos
-lint:
-	@echo "--> Linting"
-	@go run github.com/golangci/golangci-lint/cmd/golangci-lint@latest run --fix
-	@echo "--> Formatting"
-	@go run mvdan.cc/gofumpt@latest -w .
-	@echo "--> Fixing typos"
-	@which codespell || pip3 install codespell
-	@codespell -w
+lint: pre-commit
+	@pre-commit run
 .PHONY: lint
 
 #? vulncheck: Run latest govulncheck
@@ -258,12 +252,11 @@ vulncheck:
 	@go run golang.org/x/vuln/cmd/govulncheck@latest ./...
 .PHONY: vulncheck
 
-#? gofumpt-pre-commit: Create gofumpt pre-commit hook
-gofumpt-pre-commit:
-	@echo "--> Creating gofumpt pre-commit hook"
-	@mkdir -p .git/hooks
-	@cp scripts/gofumpt.sh .git/hooks/pre-commit
-.PHONY: gofumpt-pre-commit
+#? pre-commit: Create pre-commit hook using the pre-commit framework.
+pre-commit:
+	@which pre-commit || pip3 install pre-commit
+	@pre-commit install
+.PHONY: pre-commit
 
 DESTINATION = ./index.html.md
 
