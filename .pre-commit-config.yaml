@@ -13,7 +13,7 @@ repos:
         entry: "golangci-lint"
         language: golang
         args: [run, --fix, -c, .golangci.yml]
-        types: [go]
+        #types: [go]
         require_serial: true
         pass_filenames: false
 # mvdan does not believe in pre-commit-config.yaml: https://github.com/mvdan/gofumpt/issues/258#issuecomment-1445487827
