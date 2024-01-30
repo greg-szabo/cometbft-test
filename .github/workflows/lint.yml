@@ -5,21 +5,21 @@ name: Lint, format and check the code for typos
 #
 # To run this locally, simply run `make lint` from the root of the repo.
 
-on:
-  pull_request:
-  merge_group:
-  push:
-    branches:
-      - greg/pre-commit-hooks
+#on:
+#  pull_request:
+#  merge_group:
+#  push:
+#    branches:
+#      - greg/pre-commit-hooks
 
-jobs:
-  lint:
-    name: lint
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pre-commit-ci/lite-action@v1.0.1
+#jobs:
+#  lint:
+#    name: lint
+#    runs-on: ubuntu-latest
+#    timeout-minutes: 10
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: pre-commit-ci/lite-action@v1.0.1
 
 #      - uses: actions/setup-go@v5
 #        with:
