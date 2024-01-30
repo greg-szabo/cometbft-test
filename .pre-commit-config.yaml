@@ -4,18 +4,18 @@ repos:
 #    hooks:
 #    -   id: golangci-lint-full
 #        args: [-c,.golangci.yml]
--   repo: local
-    hooks:
-    -   id: golangci-lint
-        name: golangci-lint
-        additional_dependencies:
-            - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
-        entry: "golangci-lint"
-        language: golang
-        args: [run, --fix, -c, .golangci.yml]
-        #types: [go]
-        require_serial: true
-        pass_filenames: false
+#-   repo: local
+#    hooks:
+#    -   id: golangci-lint
+#        name: golangci-lint
+#        additional_dependencies:
+#            - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
+#        entry: "golangci-lint"
+#        language: golang
+#        args: [run, --fix, -c, .golangci.yml]
+#        #types: [go]
+#        require_serial: true
+#        pass_filenames: false
 # mvdan does not believe in pre-commit-config.yaml: https://github.com/mvdan/gofumpt/issues/258#issuecomment-1445487827
 -   repo: local
     hooks:
