@@ -3,6 +3,7 @@ repos:
     rev: v1.55.2
     hooks:
     -   id: golangci-lint-full
+        args: [-c,.golangci.yml]
 # mvdan does not believe in pre-commit-config.yaml: https://github.com/mvdan/gofumpt/issues/258#issuecomment-1445487827
 -   repo: local
     hooks:
