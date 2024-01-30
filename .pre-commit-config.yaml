@@ -1,9 +1,21 @@
 repos:
--   repo: https://github.com/golangci/golangci-lint
-    rev: v1.55.2
+#-   repo: https://github.com/golangci/golangci-lint
+#    rev: v1.55.2
+#    hooks:
+#    -   id: golangci-lint-full
+#        args: [-c,.golangci.yml]
+-   repo: local
     hooks:
-    -   id: golangci-lint-full
-        args: [-c,.golangci.yml]
+    -   id: golangci-lint
+        name: golangci-lint
+        additional_dependencies:
+            - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
+        entry: "golangci-lint"
+        language: golang
+        args: [run, --fix, -c, .golangci.yml]
+        types: [go]
+        require_serial: true
+        pass_filenames: false
 # mvdan does not believe in pre-commit-config.yaml: https://github.com/mvdan/gofumpt/issues/258#issuecomment-1445487827
 -   repo: local
     hooks:
@@ -11,10 +23,11 @@ repos:
         name: "gofumpt"
         # pre-commit.ci can't do DNS resolution for multi-hop links: https://results.pre-commit.ci/run/github/748935561/1706332624.dZvEqrO9STm7j37FIRakgQ
         additional_dependencies:
-            - mvdan.cc/gofumpt@latest
+            - mvdan.cc/gofumpt@v0.6.0
         entry: "gofumpt"
         language: golang
         args: [-w, .]
+        types: [go]
         pass_filenames: false
 -   repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
