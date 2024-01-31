@@ -1,20 +1,21 @@
 repos:
-#-   repo: https://github.com/golangci/golangci-lint
-#    rev: v1.55.2
-#    hooks:
-#    -   id: golangci-lint-full
--   repo: local
+-   repo: https://github.com/golangci/golangci-lint
+    rev: v1.55.2
     hooks:
-    -   id: golangci-lint
-        name: golangci-lint
-        additional_dependencies:
-            - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
-        entry: "golangci-lint"
-        language: golang
-        args: [run, --no-config, --max-issues-per-linter, '1', -v, -D, typecheck]
-        types: [go]
-        require_serial: true
-        pass_filenames: false
+    -   id: golangci-lint-full
+        args: [--no-config, --max-issues-per-linter, '1', -v, -D, typecheck]
+#-   repo: local
+#    hooks:
+#    -   id: golangci-lint
+#        name: golangci-lint
+#        additional_dependencies:
+#            - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
+#        entry: "golangci-lint"
+#        language: golang
+#        args: [run, --no-config, --max-issues-per-linter, '1', -v, -D, typecheck]
+#        types: [go]
+#        require_serial: true
+#        pass_filenames: false
 # mvdan does not believe in pre-commit-config.yaml: https://github.com/mvdan/gofumpt/issues/258#issuecomment-1445487827
 -   repo: local
     hooks:
