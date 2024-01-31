@@ -3,78 +3,54 @@ run:
   timeout: 10m
 
 linters:
-#  disable-all: true
-  enable:
-    - asasalint
+  enable-all: true
+  disable:
+    - containedctx
+    - contextcheck
+    - cyclop
+    - deadcode
+    - dupword
+    - errname
+    - errorlint
+    - exhaustive
+    - exhaustivestruct
+    - exhaustruct
+    - forbidigo
+    - forcetypeassert
+    - funlen
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - gocyclo
+    - godox
+    - goerr113
+    - golint
+    - gomnd
+    - gomoddirectives
+    - ifshort
+    - interfacebloat
+    - interfacer
+    - ireturn
+    - lll
+    - maintidx
+    - maligned
+    - nestif
+    - nilnil
+    - nlreturn
+    - nonamedreturns
+    - nosnakecase
+    - predeclared
+    - revive
+    - scopelint
+    - structcheck
+    - tagliatelle
     - typecheck
-#  disable:
-#    - asciicheck
-#    - bidichk
-#    - bodyclose
-#    - decorder
-#    - depguard
-#    - dogsled
-#    - dupl
-#    - durationcheck
-#    - errcheck
-#    - errchkjson
-#    - execinquery
-#    - exportloopref
-#    - gci
-#    - ginkgolinter
-#    - gocheckcompilerdirectives
-#    - gochecksumtype
-#    - goconst
-#    - gocritic
-#    - godot
-#    - gofmt
-#    - gofumpt
-#    - goheader
-#    - goimports
-#    - gomodguard
-#    - goprintffuncname
-#    - gosec
-#    - gosimple
-#    - gosmopolitan
-#    - govet
-#    - grouper
-#    - importas
-#    - inamedparam
-#    - ineffassign
-#    - loggercheck
-#    - makezero
-#    - mirror
-#    - misspell
-#    - musttag
-#    - nakedret
-#    - nilerr
-#    - noctx
-#    - nolintlint
-#    - nosprintfhostport
-#    - paralleltest
-#    - perfsprint
-#    - prealloc
-#    - promlinter
-#    - protogetter
-#    - reassign
-#    - rowserrcheck
-#    - sloglint
-#    - sqlclosecheck
-#    - staticcheck
-#    - stylecheck
-#    - tagalign
-#    - tenv
-#    - testableexamples
-#    - testifylint
-#    - testpackage
-#    - thelper
-#    - tparallel
-#    - unconvert
-#    - unused
-#    - usestdlibvars
-#    - wastedassign
-#    - whitespace
-#    - zerologlint
+    # Prefer unparam over revive's unused param. It is more thorough in its checking.
+    - unparam
+    - varcheck
+    - varnamelen
+    - wrapcheck
+    - wsl
 
 issues:
   exclude-rules:
