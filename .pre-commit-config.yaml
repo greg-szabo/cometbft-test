@@ -3,26 +3,12 @@ repos:
     rev: v1.55.2
     hooks:
     -   id: golangci-lint
-        args: [-v]
-        verbose: true
-#-   repo: local
-#    hooks:
-#    -   id: golangci-lint
-#        name: golangci-lint
-#        additional_dependencies:
-#            - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
-#        entry: "golangci-lint"
-#        language: golang
-#        args: [run, --no-config, --max-issues-per-linter, '1', -v, -D, typecheck]
-#        types: [go]
-#        require_serial: true
-#        pass_filenames: false
 # mvdan does not believe in pre-commit-config.yaml: https://github.com/mvdan/gofumpt/issues/258#issuecomment-1445487827
 -   repo: local
     hooks:
     -   id: gofumpt
         name: "gofumpt"
-        # pre-commit.ci can't do DNS resolution for multi-hop links: https://results.pre-commit.ci/run/github/748935561/1706332624.dZvEqrO9STm7j37FIRakgQ
+        # pre-commit.ci can only do DNS resolution for multi-hop links during build
         additional_dependencies:
             - mvdan.cc/gofumpt@v0.6.0
         entry: "gofumpt"
