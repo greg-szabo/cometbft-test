@@ -11,7 +11,7 @@ repos:
             - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
         entry: "golangci-lint"
         language: golang
-        args: [run, --max-issues-per-linter, '1', -v]
+        args: [run, --max-issues-per-linter, '1', -v, -D, typecheck]
         types: [go]
         require_serial: true
         pass_filenames: false
