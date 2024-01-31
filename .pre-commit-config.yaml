@@ -11,9 +11,8 @@ repos:
             - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2
         entry: "golangci-lint"
         language: golang
-        #args: [run, --fix, --enable-all, --max-issues-per-linter, '1', -v]
-        args: [--version, -v]
-        #types: [go]
+        args: [run, --max-issues-per-linter, '1', -v]
+        types: [go]
         require_serial: true
         pass_filenames: false
 # mvdan does not believe in pre-commit-config.yaml: https://github.com/mvdan/gofumpt/issues/258#issuecomment-1445487827
