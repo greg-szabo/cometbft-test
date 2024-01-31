@@ -6,8 +6,8 @@ linters:
 #  disable-all: true
   enable:
     - asasalint
-  disable:
     - typecheck
+#  disable:
 #    - asciicheck
 #    - bidichk
 #    - bodyclose
