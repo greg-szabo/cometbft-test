@@ -3,7 +3,7 @@ repos:
     rev: v1.55.2
     hooks:
     -   id: golangci-lint-full
-        args: [--config, .g.yml, --max-issues-per-linter, '1', -v, -D, typecheck]
+        args: [-v]
         verbose: true
 #-   repo: local
 #    hooks:
