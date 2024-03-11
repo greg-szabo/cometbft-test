@@ -51,7 +51,7 @@ require (
 	golang.org/x/exp v0.0.0-20231110203233-9a3e6036ecaa
 	golang.org/x/sync v0.6.0
 	gonum.org/v1/gonum v0.14.0
-	google.golang.org/protobuf v1.32.0
+	google.golang.org/protobuf v1.33.0
 )
 
 require (
@@ -136,11 +136,10 @@ require (
 replace github.com/cometbft/cometbft/api => ./api
 
 retract (
-        // a regression was introduced
-        v0.38.4
-        // a breaking change was introduced
-        v0.38.3
-        // superseeded by v0.38.3 because of ASA-2024-001
+	// a regression was introduced
+	v0.38.4
+	// a breaking change was introduced
+	v0.38.3
+	// superseeded by v0.38.3 because of ASA-2024-001
 	[v0.38.0, v0.38.2]
 )
-
